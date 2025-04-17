@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-app.use("/todos", todoRoutes); // 加上 Todo 路由
+app.use("/api/todos", todoRoutes); // 加上 Todo 路由
 
 app.get("/", (req, res) => {
   res.send("Hello, MeowTodo Backend!");
