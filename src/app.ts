@@ -17,6 +17,14 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 
+// 放在所有路由後面，初始化前：404 處理
+app.use((req, res, next) => {
+  res.status(404).json({
+    status: "error",
+    message: "無此路由",
+  });
+});
+
 AppDataSource.initialize()
   .then(() => {
     console.log("📦 DB Connected!");
