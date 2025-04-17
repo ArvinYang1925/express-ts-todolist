@@ -45,7 +45,7 @@ export async function updateTodo(
   try {
     const { id } = req.params;
     const { title, completed } = req.body;
-    const todo = await todoRepository.findOneBy({ id: Number(id) });
+    const todo = await todoRepository.findOneBy({ id });
 
     if (!todo) {
       res.status(404).json({ status: "error", message: "Todo not found" });
@@ -68,7 +68,7 @@ export async function deleteTodo(
 ): Promise<void> {
   try {
     const { id } = req.params;
-    const result = await todoRepository.delete(Number(id));
+    const result = await todoRepository.delete({ id });
     if (result.affected === 0) {
       res.status(404).json({ status: "error", message: "Todo not found" });
       return;

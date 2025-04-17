@@ -14,6 +14,6 @@ export const AppDataSource = new DataSource({
   database: process.env.DB_NAME,
   entities: [Todo],
   synchronize: true, // 開發階段可以 true，正式環境建議改成 false
-  logging: true,
+  logging: true, // 顯示 SQL 語法（方便除錯）
   ssl: { rejectUnauthorized: false },
 });
