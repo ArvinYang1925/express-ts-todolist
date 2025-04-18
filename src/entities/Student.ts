@@ -7,10 +7,10 @@ export class Student {
   id!: string;
 
   // FK 欄位，對應到 users.id
-  @Column({ name: "user_id", type: "uuid", unique: true })
+  @Column({ name: "user_id", type: "uuid", unique: true, nullable: false })
   userId!: string;
 
-  @Column({ name: "phone_number", length: 20 })
+  @Column({ name: "phone_number", length: 20, nullable: true })
   phoneNumber!: string;
 
   // Owning side: student.userId → users.id

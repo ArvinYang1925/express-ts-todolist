@@ -109,5 +109,7 @@
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true                                 /* 跳過對 node_modules 裡 .d.ts 型別檔的檢查 Skip type checking all .d.ts files. */
-  }
+  },
+  "include": ["src/**/*"],        // 只編譯 src 資料夾裡的東西
+  "exclude": ["node_modules"]     // 不要編譯這個資料夾
 }
